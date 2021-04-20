@@ -7,6 +7,19 @@
   <channel>	
     <title>Sample video</title>	
     <dfpvideo:version>2</dfpvideo:version>
+     <item> 
+      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
+      <title>Bunny.mov 5</title>
+      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
+      <dfpvideo:keyvalues key="season" value="2" type="int"/>
+      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
+      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
+      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
+      <dfpvideo:contentId>video5</dfpvideo:contentId>
+      <dfpvideo:lastModifiedDate>Tue, 20 Apr 2021 4:24:11  +0200</dfpvideo:lastModifiedDate>
+      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
+    </item> 
+    
     <item> 
       <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
       <title>Bunny.mov 4</title>
