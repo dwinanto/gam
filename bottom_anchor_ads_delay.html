@@ -55,7 +55,21 @@
         // Enable SRA and services.
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
+       
       });
+     
+      // This listener will be called when a creative iframe load event fires.
+      var targetSlot = 'static-ad-1';
+      googletag.pubads().addEventListener('slotOnload', function(event) {
+      var slot = event.slot;
+      console.log(
+          'Creative iframe for slot', slot.getSlotElementId(), 'has loaded.');
+
+      if (slot === targetSlot) {
+        // Slot specific logic.
+       console.log('hello');
+        }
+      });     
     </script>
   </head>
   <body>
