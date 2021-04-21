@@ -51,6 +51,7 @@
           googletag.pubads().addEventListener('slotOnload', function(event) {
           var slot = event.slot;
           console.log('Creative iframe for slot', slot.getSlotElementId(), 'has loaded.');
+          console.log(slot);
           if (slot === targetSlot) {
            // Slot specific logic.
            console.log('hello');
