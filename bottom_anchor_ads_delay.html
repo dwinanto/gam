@@ -45,10 +45,10 @@
        
       });
      
-      let lastKnownScrollPosition = 0;
-      let ticking = false;
+      let scroll_position = 0;
+      let flag = false;
 
-      function doSomething(scrollPos) {
+      function showads(scrollPos) {
           // This listener will be called when a creative iframe load event fires.
           googletag.cmd.push(function() {
               anchorSlot = googletag.defineOutOfPageSlot('/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
@@ -63,11 +63,11 @@
       }
 
       document.addEventListener('scroll', function(e) {
-        lastKnownScrollPosition = window.scrollY;
+        scroll_position = window.scrollY;
 
-        if (!ticking) {
-            doSomething(lastKnownScrollPosition);
-            ticking = true;
+        if (!flag) {
+            showads(scroll_position);
+            flag = true;
         }
       });     
 
