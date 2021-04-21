@@ -45,32 +45,32 @@
        
       });
      
-      // This listener will be called when a creative iframe load event fires.
-      googletag.cmd.push(function() {
-          var targetSlot = 'static-ad-1';
-          googletag.pubads().addEventListener('slotOnload', function(event) {
-          var slot = event.slot;
-          console.log('Creative iframe for slot', slot.getSlotElementId(), 'has loaded.');
-          console.log(slot);
-          if (slot.getSlotElementId() === targetSlot) {
-           // Slot specific logic.
-           console.log('hello');
-           anchorSlot = googletag.defineOutOfPageSlot('/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
-           // Anchor slots return null if the page or device does not support
-           // anchors.
-           if (anchorSlot) {
-            anchorSlot
-             .setTargeting('test', 'anchor')
-             .addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-            googletag.display('gpt_unit_/6355419/Travel_0');
-            document.getElementById('status').innerText ='Anchor ad is initialized. Scroll page to activate.';
-           }
+      let lastKnownScrollPosition = 0;
+      let ticking = false;
 
-          }
-          });
-       });
+      function doSomething(scrollPos) {
+          // This listener will be called when a creative iframe load event fires.
+          googletag.cmd.push(function() {
+              anchorSlot = googletag.defineOutOfPageSlot('/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+              if (anchorSlot) {
+                  anchorSlot.setTargeting('test', 'anchor').addService(googletag.pubads());
+                  googletag.pubads().enableSingleRequest();
+                  googletag.enableServices();
+                  googletag.display('gpt_unit_/6355419/Travel_0');
+                  document.getElementById('status').innerText ='Anchor ad is initialized. Scroll page to activate.';
+                }
+            }
+      }
+
+      document.addEventListener('scroll', function(e) {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+            doSomething(lastKnownScrollPosition);
+            ticking = true;
+        }
+      });     
+
     </script>
   </head>
   <body>
