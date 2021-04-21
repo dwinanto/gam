@@ -29,8 +29,6 @@
         // Define an anchor ad slot at the top of the viewport.
         // Note: a single anchor ad slot may be defined per page, at either the
         // top or bottom of the viewport.
-        anchorSlot = googletag.defineOutOfPageSlot(
-            '/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
 
         // Define an anchor ad slot at the bottom of the viewport.
         // anchorSlot = googletag.defineOutOfPageSlot(
@@ -56,12 +54,15 @@
           if (slot === targetSlot) {
            // Slot specific logic.
            console.log('hello');
+           anchorSlot = googletag.defineOutOfPageSlot('/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
            // Anchor slots return null if the page or device does not support
            // anchors.
            if (anchorSlot) {
             anchorSlot
              .setTargeting('test', 'anchor')
              .addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
             document.getElementById('status').innerText ='Anchor ad is initialized. Scroll page to activate.';
            }
 
