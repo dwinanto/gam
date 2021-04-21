@@ -36,17 +36,6 @@
         // anchorSlot = googletag.defineOutOfPageSlot(
         //     '/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR /TOP_ANCHOR);
 
-        // Anchor slots return null if the page or device does not support
-        // anchors.
-        if (anchorSlot) {
-          anchorSlot
-              .setTargeting('test', 'anchor')
-              .addService(googletag.pubads());
-
-          document.getElementById('status').innerText =
-            'Anchor ad is initialized. Scroll page to activate.';
-        }
-
         // Define static ad slots.
         staticSlot = googletag.defineSlot(
               '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
