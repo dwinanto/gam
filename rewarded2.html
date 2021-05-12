@@ -31,10 +31,11 @@
 
                 googletag.pubads().addEventListener('rewardedSlotGranted',
                     function (evt) {
+                        current_value = parseInt(document.getElementById("reward_label").innerHTML);
                         reward = evt.payload;
                         console.log(JSON.stringify(reward));
                         console.log(JSON.stringify(reward.amount));
-                        document.getElementById("reward_label").innerHTML = JSON.stringify(reward.amount);
+                        document.getElementById("reward_label").innerHTML = JSON.stringify(current_value + reward.amount);
 
                         // alert('granted! ' + JSON.stringify(evt.payload));
                     });
