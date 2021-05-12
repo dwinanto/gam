@@ -17,11 +17,6 @@
                 .setTargeting('test_request', '1')
                 .addService(googletag.pubads());
 
-            rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
-            rewardedSlot3
-                // .setTargeting('test_request', '1')
-                .addService(googletag.pubads());
-
             googletag.pubads().enableAsyncRendering();
             googletag.enableServices();
 
@@ -71,6 +66,10 @@
 
         function myFunction3() {
             googletag.cmd.push(function () {
+                rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+                rewardedSlot3
+                    // .setTargeting('test_request', '1')
+                    .addService(googletag.pubads());
                 googletag.display(rewardedSlot3);
             });
         }
