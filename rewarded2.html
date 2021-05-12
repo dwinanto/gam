@@ -12,9 +12,9 @@
         function myFunction() {
             googletag = window.googletag || { cmd: [] };
             googletag.cmd.push(() => {
-                const iklan = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
-                iklan
-                    .setTargeting('test_request', '1')
+                const rewardedSlot = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+                rewardedSlot
+                    //.setTargeting('test_request', '1')
                     .addService(googletag.pubads());
 
                 googletag.pubads().enableAsyncRendering();
@@ -40,7 +40,7 @@
                 //googletag.destroySlots([rewardedSlot]);
                 //});
 
-                googletag.display(iklan);
+                googletag.display(rewardedSlot);
             });
         }
         function myFunction2() {
