@@ -55,17 +55,23 @@
                     googletag.destroySlots([rewardedSlot]);
                 });
         });
-        
+
         function myFunction(googletag) {
-            googletag.display(rewardedSlot);
+            googletag.cmd.push(function () {
+                googletag.display(rewardedSlot);
+            });
         }
 
         function myFunction2(googletag) {
-            googletag.display(rewardedSlot2);
+            googletag.cmd.push(function () {
+                googletag.display(rewardedSlot2);
+            });
         }
 
         function myFunction3(googletag) {
-            googletag.display(rewardedSlot3);
+            googletag.cmd.push(function () {
+                googletag.display(rewardedSlot3);
+            });
         }
 
     </script>
