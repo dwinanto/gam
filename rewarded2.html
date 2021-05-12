@@ -36,7 +36,7 @@
 
                 googletag.pubads().addEventListener('rewardedSlotClosed',
                     function (evt) {
-                        alert('Closed by the user!');
+                        // alert('Closed by the user!');
                         googletag.destroySlots([rewardedSlot]);
                     });
 
@@ -53,11 +53,11 @@
                 googletag.pubads().enableAsyncRendering();
                 googletag.enableServices();
 
-                googletag.pubads().addEventListener('rewardedSlotReady',
-                    function (evt) {
-                        console.log(evt)
-                        evt.makeRewardedVisible();
-                    });
+                // googletag.pubads().addEventListener('rewardedSlotReady',
+                //     function (evt) {
+                //         console.log(evt)
+                //         evt.makeRewardedVisible();
+                //     });
                 googletag.display(rewardedSlot2);
             });
         }
@@ -71,11 +71,11 @@
                 googletag.pubads().enableAsyncRendering();
                 googletag.enableServices();
 
-                googletag.pubads().addEventListener('rewardedSlotReady',
-                    function (evt) {
-                        console.log(evt)
-                        evt.makeRewardedVisible();
-                    });
+                // googletag.pubads().addEventListener('rewardedSlotReady',
+                //     function (evt) {
+                //         console.log(evt)
+                //         evt.makeRewardedVisible();
+                //     });
                 googletag.display(rewardedSlot3);
             });
         }        
