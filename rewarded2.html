@@ -21,11 +21,11 @@
 
                 googletag.pubads().addEventListener('rewardedSlotReady',
                     function (evt) {
-                        if (confirm('want to see a rewarded ad?')) {
+                        //if (confirm('want to see a rewarded ad?')) {
                             evt.makeRewardedVisible();
-                        } else {
-                            googletag.destroySlots([rewardedSlot]);
-                        }
+                        //} else {
+                        //    googletag.destroySlots([rewardedSlot]);
+                        //}
                     });
 
                 googletag.pubads().addEventListener('rewardedSlotGranted',
