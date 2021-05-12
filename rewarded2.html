@@ -19,25 +19,25 @@
                 googletag.pubads().enableAsyncRendering();
                 googletag.enableServices();
 
-                googletag.pubads().addEventListener('rewardedSlotReady',
-                    function (evt) {
+                //googletag.pubads().addEventListener('rewardedSlotReady',
+                    //function (evt) {
                         //if (confirm('want to see a rewarded ad?')) {
                             evt.makeRewardedVisible();
                         //} else {
                         //    googletag.destroySlots([rewardedSlot]);
                         //}
-                    });
+                    //});
 
-                googletag.pubads().addEventListener('rewardedSlotGranted',
-                    function (evt) {
-                        alert('granted! ' + JSON.stringify(evt.payload));
-                    });
+                //googletag.pubads().addEventListener('rewardedSlotGranted',
+                    //function (evt) {
+                        //alert('granted! ' + JSON.stringify(evt.payload));
+                    //});
 
-                googletag.pubads().addEventListener('rewardedSlotClosed',
-                    function (evt) {
-                        alert('Closed by the user!');
+                //googletag.pubads().addEventListener('rewardedSlotClosed',
+                    //function (evt) {
+                        //alert('Closed by the user!');
                         //googletag.destroySlots([rewardedSlot]);
-                    });
+                    //});
 
                 googletag.display(rewardedSlot);
             });
