@@ -53,6 +53,7 @@
             googletag.pubads().addEventListener('rewardedSlotClosed',
                 function (evt) {
                     // alert('Closed by the user!');
+                    console.log('ad slot is closed');
                     googletag.destroySlots([rewardedSlot]);
                 });
         });
