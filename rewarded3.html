@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Rewarded slot test page
+    </title>
+    <script src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        googletag = window.googletag || { cmd: [] };
+        googletag.cmd.push(() => {
+            const rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot
+                .setTargeting('test_request', '1')
+                .addService(googletag.pubads());
+
+            const rewardedSlot2 = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot2
+                .setTargeting('test_request', '1')
+                .addService(googletag.pubads());
+
+            const rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot3
+                // .setTargeting('test_request', '1')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableAsyncRendering();
+            googletag.enableServices();
+
+            googletag.pubads().addEventListener('rewardedSlotReady',
+                function (evt) {
+                    //if (confirm('want to see a rewarded ad?')) {
+                    evt.makeRewardedVisible();
+                    //} else {
+                    //    googletag.destroySlots([rewardedSlot]);
+                    //}
+                });
+
+            googletag.pubads().addEventListener('rewardedSlotGranted',
+                function (evt) {
+                    current_value = parseInt(document.getElementById("reward_label").innerHTML);
+                    reward = evt.payload;
+                    console.log(JSON.stringify(reward));
+                    console.log(JSON.stringify(reward.amount));
+                    document.getElementById("reward_label").innerHTML = JSON.stringify(current_value + reward.amount);
+
+                    // alert('granted! ' + JSON.stringify(evt.payload));
+                });
+
+            googletag.pubads().addEventListener('rewardedSlotClosed',
+                function (evt) {
+                    // alert('Closed by the user!');
+                    googletag.destroySlots([rewardedSlot]);
+                });
+        });
+        
+        function myFunction(googletag) {
+            googletag.display(rewardedSlot);
+        }
+
+        function myFunction2(googletag) {
+            googletag.display(rewardedSlot2);
+        }
+
+        function myFunction3(googletag) {
+            googletag.display(rewardedSlot3);
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>
+        Bottom of the page...
+        <button onclick="myFunction()">Get my reward</button>
+        <button onclick="myFunction2()">Get my reward2</button>
+        <button onclick="myFunction3()">Get my reward3</button>
+        <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">Show/Refresh rewarded
+            Ad</button>
+    </p>
+    <p id="reward_label">0</p>
+
+</body>
+
+</html>
