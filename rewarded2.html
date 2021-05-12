@@ -29,10 +29,12 @@
                         //}
                     });
 
-                //googletag.pubads().addEventListener('rewardedSlotGranted',
-                //function (evt) {
+                googletag.pubads().addEventListener('rewardedSlotGranted',
+                function (evt) {
+                    reward = JSON.stringify(evt.payload);
+                    console.log(reward)
                 //alert('granted! ' + JSON.stringify(evt.payload));
-                //});
+                });
 
                 googletag.pubads().addEventListener('rewardedSlotClosed',
                     function (evt) {
