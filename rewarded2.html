@@ -32,10 +32,10 @@
                 googletag.pubads().addEventListener('rewardedSlotGranted',
                     function (evt) {
                         reward = JSON.stringify(evt.payload);
-                        // console.log(reward);
-                        // document.getElementById("reward_label").innerHTML = reward.amount;
+                        console.log(reward);
+                        document.getElementById("reward_label").innerHTML = reward.amount;
 
-                        //alert('granted! ' + JSON.stringify(evt.payload));
+                        alert('granted! ' + JSON.stringify(evt.payload));
                     });
 
                 googletag.pubads().addEventListener('rewardedSlotClosed',
