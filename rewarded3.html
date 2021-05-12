@@ -12,11 +12,6 @@
         var rewardedSlot, rewardedSlot2, rewardedSlot3
         googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(() => {
-            rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
-            rewardedSlot
-                .setTargeting('test_request', '1')
-                .addService(googletag.pubads());
-
             rewardedSlot2 = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
             rewardedSlot2
                 .setTargeting('test_request', '1')
@@ -60,6 +55,10 @@
 
         function myFunction() {
             window.googletag.cmd.push(function () {
+                rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+                rewardedSlot
+                    .setTargeting('test_request', '1')
+                    .addService(googletag.pubads());
                 window.googletag.display(rewardedSlot);
             });
         }
