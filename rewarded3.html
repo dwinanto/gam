@@ -9,19 +9,20 @@
     </title>
     <script src="//www.googletagservices.com/tag/js/gpt.js"></script>
     <script>
+        var rewardedSlot, rewardedSlot2, rewardedSlot3
         googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(() => {
-            const rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
             rewardedSlot
                 .setTargeting('test_request', '1')
                 .addService(googletag.pubads());
 
-            const rewardedSlot2 = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot2 = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
             rewardedSlot2
                 .setTargeting('test_request', '1')
                 .addService(googletag.pubads());
 
-            const rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+            rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
             rewardedSlot3
                 // .setTargeting('test_request', '1')
                 .addService(googletag.pubads());
@@ -57,8 +58,8 @@
         });
 
         function myFunction() {
-            window.googletag.cmd.push(function () {
-                window.googletag.display(rewardedSlot);
+            googletag.cmd.push(function () {
+                googletag.display(rewardedSlot);
             });
         }
 
