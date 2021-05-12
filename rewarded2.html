@@ -33,6 +33,8 @@
                 function (evt) {
                     reward = JSON.stringify(evt.payload);
                     console.log(reward);
+                    document.getElementById("reward_label").innerHTML = reward.amount;
+}
                 //alert('granted! ' + JSON.stringify(evt.payload));
                 });
 
@@ -91,10 +93,10 @@
         <button onclick="myFunction()">Get my reward</button>
         <button onclick="myFunction2()">Get my reward2</button>
         <button onclick="myFunction3()">Get my reward3</button>
-        <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">Show/Refresh rewarded
-            Ad</button>
-
+        <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">Show/Refresh rewarded Ad</button>
     </p>
+    <p id="reward_label">0</p>
+
 </body>
 
 </html>
