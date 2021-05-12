@@ -12,8 +12,8 @@
         function myFunction() {
             googletag = window.googletag || { cmd: [] };
             googletag.cmd.push(() => {
-                const rewardedSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
-                rewardedSlot
+                const iklan = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+                iklan
                     .setTargeting('test_request', '1')
                     .addService(googletag.pubads());
 
@@ -40,7 +40,7 @@
                 //googletag.destroySlots([rewardedSlot]);
                 //});
 
-                googletag.display(rewardedSlot);
+                googletag.display(iklan);
             });
         }
         function myFunction2() {
