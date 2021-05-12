@@ -61,6 +61,25 @@
                 googletag.display(rewardedSlot2);
             });
         }
+        function myFunction3() {
+            googletag.cmd.push(() => {
+                const rewardedSlot3 = googletag.defineOutOfPageSlot('/6062/sanghan_rweb_ad_unit', googletag.enums.OutOfPageFormat.REWARDED).addService(googletag.pubads());
+                rewardedSlot3
+                    // .setTargeting('test_request', '1')
+                    .addService(googletag.pubads());
+
+                googletag.pubads().enableAsyncRendering();
+                googletag.enableServices();
+
+                googletag.pubads().addEventListener('rewardedSlotReady',
+                    function (evt) {
+                        console.log(evt)
+                        evt.makeRewardedVisible();
+                    });
+                googletag.display(rewardedSlot3);
+            });
+        }        
+        
     </script>
 </head>
 
@@ -69,6 +88,7 @@
         Bottom of the page...
         <button onclick="myFunction()">Get my reward</button>
         <button onclick="myFunction2()">Get my reward2</button>
+        <button onclick="myFunction3()">Get my reward3</button>
         <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">Show/Refresh rewarded
             Ad</button>
 
