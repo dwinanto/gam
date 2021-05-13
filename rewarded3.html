@@ -62,7 +62,12 @@
                     .setTargeting('test_request', '1')
                     .addService(googletag.pubads());
                 window.googletag.display(rewardedSlot);
-                window.firebase.analytics().logEvent('reward ad is requested');
+
+                analytics.logEvent('select_content', {
+                    content_type: 'image',
+                    content_id: 'P12453',
+                    items: [{ name: 'Kittens' }]
+                });
             });
         }
 
@@ -97,8 +102,13 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        firebase.analytics().logEvent('initiate_log');
+        const analytics = firebase.analytics();
+        analytics.logEvent('notification_received', {
+            content_type: 'image',
+            content_id: 'P12453',
+            items: [{ name: 'Kittens' }]
+        });
+
     </script>
 </head>
 
