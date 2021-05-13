@@ -8,6 +8,13 @@
         Rewarded slot test page
     </title>
     <script src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
     <script>
         var rewardedSlot, rewardedSlot2, rewardedSlot3
         googletag = window.googletag || { cmd: [] };
@@ -73,7 +80,23 @@
                 googletag.display(rewardedSlot3);
             });
         }
+    </script>
 
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3K5WuoObzk5VfLuxvksqbVOspP-WrzEA",
+            authDomain: "avengers-gold.firebaseapp.com",
+            projectId: "avengers-gold",
+            storageBucket: "avengers-gold.appspot.com",
+            messagingSenderId: "751876414940",
+            appId: "1:751876414940:web:9e48be6a618fd9ec7f8319",
+            measurementId: "G-GMPTS2X81N"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
     </script>
 </head>
 
