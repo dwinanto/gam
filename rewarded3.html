@@ -98,6 +98,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+        firebase.analytics().logEvent('initiate_log');
     </script>
 </head>
 
