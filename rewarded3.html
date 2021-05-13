@@ -62,6 +62,7 @@
                     .setTargeting('test_request', '1')
                     .addService(googletag.pubads());
                 window.googletag.display(rewardedSlot);
+                firebase.analytics().logEvent('reward ad is requested');
             });
         }
 
