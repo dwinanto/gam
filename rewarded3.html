@@ -194,7 +194,7 @@
     <script>
         // Initialize Firebase remote config
         function myFunction4() {
-            const remoteConfig = firebase.remoteConfig();
+            //const remoteConfig = firebase.remoteConfig();
             remoteConfig.fetchAndActivate()
                 .then(() => {
                     const val = remoteConfig.getValue("welcome_messsage");
