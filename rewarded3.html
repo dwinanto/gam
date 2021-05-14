@@ -79,17 +79,15 @@
                 printEventMessage('Visibility has changed.', slotId, details);
             });
 
-            googletag.pubads().addEventListener('rewardedSlotReady',
-            function (event) {
+            googletag.pubads().addEventListener('rewardedSlotReady', function (event) {
                 //if (confirm('want to see a rewarded ad?')) {
-                    event.makeRewardedVisible();
+                event.makeRewardedVisible();
                 //} else {
                 //    googletag.destroySlots([rewardedSlot]);
                 //}
             });
 
-            googletag.pubads().addEventListener('rewardedSlotGranted',
-            function (event) {
+            googletag.pubads().addEventListener('rewardedSlotGranted', function (event) {
                 current_value = parseInt(document.getElementById("reward_label").innerHTML);
                 reward = event.payload;
                 console.log(JSON.stringify(reward));
@@ -99,8 +97,7 @@
                 // alert('granted! ' + JSON.stringify(evt.payload));
             });
 
-            googletag.pubads().addEventListener('rewardedSlotClosed',
-            function (event) {
+            googletag.pubads().addEventListener('rewardedSlotClosed', function (event) {
                 // alert('Closed by the user!');
                 console.log('ad slot is closed');
                 googletag.destroySlots([rewardedSlot]);
@@ -109,7 +106,7 @@
             // Enable SRA and services.
             // googletag.pubads().enableAsyncRendering();
             googletag.pubads().enableSingleRequest();
-            googletag.enableServices();            
+            googletag.enableServices();
         });
 
         function printEventMessage(eventMessage, slotId, details = {}) {
@@ -178,11 +175,32 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const analytics = firebase.analytics();
+
         analytics.logEvent('notification_received', {
             content_type: 'image',
             content_id: 'P12453',
             items: [{ name: 'Kittens' }]
         });
+    </script>
+
+    <script>
+
+        // Initialize Firebase remote config
+        const remoteConfig = firebase.remoteConfig();
+        remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+        remoteConfig.defaultConfig = {
+            "welcome_message": "Welcome"
+        };
+        function myFunction4() {
+            remoteConfig.fetchAndActivate()
+                .then(() => {
+                    const val = remoteConfig.getValue("welcome_messsage");
+                    console.log('able to fetch the remote config')
+                })
+                .catch((err) => {
+                    console.log('error to fetch the remote config')
+                });
+        }
 
     </script>
     <style>
@@ -219,8 +237,7 @@
         <button onclick="myFunction()">Get my reward</button>
         <button onclick="myFunction2()">Get my reward2</button>
         <button onclick="myFunction3()">Get my reward3</button>
-        <button onclick="googletag.cmd.push(function() { googletag.pubads().refresh(); });">Show/Refresh rewarded
-            Ad</button>
+        <button onclick="myFunction4()">Get remote config</button>
     </p>
     <p id="reward_label">0</p>
     <div class="status">
