@@ -184,14 +184,14 @@
     </script>
 
     <script>
-
         // Initialize Firebase remote config
-        const remoteConfig = firebase.remoteConfig();
-        remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
-        remoteConfig.defaultConfig = {
-            "welcome_message": "Welcome"
-        };
         function myFunction4() {
+            const remoteConfig = firebase.remoteConfig();
+            remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+            remoteConfig.defaultConfig = {
+                "welcome_message": "Welcome"
+            };
+            console.log(remoteConfig);
             remoteConfig.fetchAndActivate()
                 .then(() => {
                     const val = remoteConfig.getValue("welcome_messsage");
@@ -202,7 +202,6 @@
                     console.log('error to fetch the remote config');
                 });
         }
-
     </script>
     <style>
         .status,
