@@ -175,24 +175,25 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const analytics = firebase.analytics();
-        const remoteConfig = firebase.remoteConfig();
-
         analytics.logEvent('notification_received', {
             content_type: 'image',
             content_id: 'P12453',
             items: [{ name: 'Kittens' }]
         });
 
+        const remoteConfig = firebase.remoteConfig();
         remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
         remoteConfig.defaultConfig = {
             "welcome_message": "Welcome"
         };
-        console.log(remoteConfig);
+        const val = remoteConfig.getValue("welcome_messsage");
+        console.log(val);
     </script>
 
     <script>
         // Initialize Firebase remote config
         function myFunction4() {
+            const remoteConfig = firebase.remoteConfig();
             remoteConfig.fetchAndActivate()
                 .then(() => {
                     const val = remoteConfig.getValue("welcome_messsage");
