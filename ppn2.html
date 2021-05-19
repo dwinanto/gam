@@ -13,15 +13,6 @@
 		var responsiveAdSlot = 
 		    googletag.defineSlot('/231599934,143557018/posttoday/home/lb1',[[970,250],[970,90],[970,70],[728,90]], 'div-gpt-ad-leaderboard-0')
 		             .addService(googletag.pubads());
-
-			var mapping = googletag.sizeMapping()
-				.addSize([800, 600], [728, 90])
-				.addSize([1, 1], [[336, 280], [300, 250]])
-			        .addSize([0, 0], [])
-				.build();   
-
-			responsiveAdSlot.defineSizeMapping(mapping);
-
 			googletag.pubads().enableSingleRequest();
 			googletag.enableServices();
 			});
