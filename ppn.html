@@ -27,6 +27,7 @@
                  .addService(googletag.pubads());
 
         googletag.pubads().enableSingleRequest();
+        googletag.pubads().setTargeting('page_type', ['homepage']);
 
         googletag.enableServices();
       });
