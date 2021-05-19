@@ -1,16 +1,42 @@
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">	
-    <title>title</title>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index,follow" />
   <script type="text/javascript">
-        window.googletag = window.googletag || {cmd: []};
-	googletag.cmd.push(function() {
-		var responsiveAdSlot = 
-		    googletag.defineSlot('/231599934/posttoday/home/lb1',[[970,250],[970,90],[970,70],[728,90]], 'div-gpt-ad-leaderboard-0')
-		             .addService(googletag.pubads());
+	var initGPT = function() {
+		var gads = document.createElement("script");
+		gads.async = true;
+		gads.type = "text/javascript";
+		var useSSL = "https:" == document.location.protocol;
+		gads.src = (useSSL ? "https:" : "http:") + "//securepubads.g.doubleclick.net/tag/js/gpt.js";
+		var node = document.getElementsByTagName("script")[0];
+		node.parentNode.insertBefore(gads, node);
+
+
+	};
+
+	setTimeout(initGPT, 100);
+	var gptadslots = [];
+		var googletag = googletag || {cmd:[]};
+
+
+			var add_size_leaderboard_0 = [[970,250],[970,90],[970,70],[728,90],[1200,250],[1200,90]]; 
+			googletag.cmd.push(function() {
+			var adUnits = [];
+			var responsiveAdSlot = googletag.defineSlot('/231599934/posttoday/home/lb1',[[970,250],[970,90],[970,70],[728,90]], 'div-gpt-ad-leaderboard-0')
+			.addService(googletag.pubads());
+
+			var mapping = googletag.sizeMapping()
+				.addSize([800, 600], [[728, 90]])
+				.addSize([0, 0], [[336, 280], [300, 250]])
+				.build();   
+
+			responsiveAdSlot.defineSizeMapping(mapping);
+
 			googletag.pubads().enableSingleRequest();
 			googletag.enableServices();
 			});
