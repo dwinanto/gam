@@ -9,15 +9,15 @@
 	<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
   <script type="text/javascript">
         window.googletag = window.googletag || {cmd: []};
-			var add_size_leaderboard_0 = [[970,250],[970,90],[970,70],[728,90],[1200,250],[1200,90]]; 
-			googletag.cmd.push(function() {
-			var adUnits = [];
-			var responsiveAdSlot = googletag.defineSlot('/231599934,143557018/posttoday/home/lb1',[[970,250],[970,90],[970,70],[728,90]], 'div-gpt-ad-leaderboard-0')
-			.addService(googletag.pubads());
+	googletag.cmd.push(function() {
+		var responsiveAdSlot = 
+		    googletag.defineSlot('/231599934,143557018/posttoday/home/lb1',[[970,250],[970,90],[970,70],[728,90]], 'div-gpt-ad-leaderboard-0')
+		             .addService(googletag.pubads());
 
 			var mapping = googletag.sizeMapping()
-				.addSize([800, 600], [[728, 90]])
-				.addSize([0, 0], [[336, 280], [300, 250]])
+				.addSize([800, 600], [728, 90])
+				.addSize([1, 1], [[336, 280], [300, 250]])
+			        .addSize([0, 0], [])
 				.build();   
 
 			responsiveAdSlot.defineSizeMapping(mapping);
