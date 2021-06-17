@@ -11,7 +11,8 @@ In this sample, we're using Google Analytics to track the experiment. Google Ana
 <meta charset="utf-8">
   <title>amp-experiment</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup -->
+    <!-- ## Setup -->
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
   <!-- Import the `amp-experiment` component. -->
   <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
    <!-- We are using `amp-analytics` to measure results of the experiment. -->
@@ -63,7 +64,9 @@ In this sample, we're using Google Analytics to track the experiment. Google Ana
 -->
 <button class="button-color-experiment">Click here Second AMP Experiment</button>
   <a href="https://dwinanto.github.io/gam/amp_experiment.html">To 1st amp page </a>
-
+   <amp-ad class="button-color-experiment" width=300 height=250 type="doubleclick"
+        data-slot="/1056029/dwinanto_test/dwinanto_test_300_250" json='{"targeting":{"test_request":["1"]}}'>
+    </amp-ad>
 
 <!-- ## Reporting with amp-pixel-->
 
