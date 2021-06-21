@@ -1,0 +1,211 @@
+<!--
+  ## Introduction
+
+  How to display ads in your AMP HTML files.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡ lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>amp-ad</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- ## Setup -->
+    <!-- Import the `amp-ad` component in the header. -->
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <!--  -->
+    <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+    <!--  -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-ad/index.html">
+    <meta name="viewport" content="width=device-width">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <!--
+    Style different variants of the experiment by using `body[amp-x-name-of-experiment="nameOfVariant"`].
+  -->
+    <style amp-custom>
+        body[amp-x-ad-position-experiment="0"] .ad-position-experiment1 {
+            background-color: yellow;
+            display: none;
+        }
+
+        body[amp-x-ad-position-experiment="1"] .ad-position-experiment0 {
+            background-color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        We use a display none on ad unit whose we don’t want to displya
+    -->
+
+    <amp-experiment>
+        <script type="application/json">
+      {
+        "ad-position-experiment": {
+          "variants": {
+            "0": 50,
+            "1": 50
+          }
+        }
+      }
+    </script>
+    </amp-experiment>    
+
+    <amp-ad class="ad-position-experiment0" width=300 height=250 type="doubleclick" data-slot="/1056029/dwinanto_test/dwinanto_test_300_250"
+        json='{"targeting":{"experiment":["experiment_1_variant_0"]}}'>
+    </amp-ad>
+    <h1>Ipsum</h1>
+    "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+    <amp-ad class="ad-position-experiment1" width=300 height=250 type="doubleclick" data-slot="/1056029/dwinanto_test/dwinanto_test_300_250"
+        json='{"targeting":{"experiment":["experiment_1_variant_1"]}}'>
+    </amp-ad>
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dignissim massa. Etiam sodales felis nisi, vel
+    blandit magna aliquet eu. Nunc sed mauris placerat, porta ante vel, rutrum sem. Praesent sapien turpis, iaculis ac
+    auctor eget, ornare at risus. Integer augue nisi, pharetra quis pulvinar ullamcorper, condimentum in massa. Mauris
+    id ultrices enim. Pellentesque vel finibus quam, eget tempus velit. Donec suscipit nunc nibh.
+
+    Nulla vel imperdiet nisi, ac vulputate nisi. Proin malesuada magna lacinia felis commodo interdum. Nunc blandit
+    justo sed odio imperdiet tempus. Sed vel nibh id quam maximus rutrum in quis dolor. Phasellus eget imperdiet neque,
+    ut finibus lorem. Mauris rhoncus, quam eget vehicula pharetra, nibh nisl hendrerit ex, id ullamcorper justo enim
+    quis tortor. Nulla condimentum consequat varius. Quisque quis arcu rutrum, mattis massa eu, mollis ligula. Praesent
+    venenatis, dolor at egestas aliquam, lacus arcu vulputate eros, in gravida ligula sem eu diam. Proin feugiat felis
+    ipsum. Morbi vel sapien laoreet, lobortis magna ut, vestibulum eros. Suspendisse vehicula nec nisi sit amet posuere.
+
+    Mauris vel pretium nisl. Duis posuere lectus ut arcu eleifend, a vehicula ante tincidunt. Sed a accumsan eros,
+    auctor venenatis velit. Sed in bibendum augue. Nunc at lacus sit amet arcu luctus dictum. Nunc nec imperdiet nisi,
+    vel tempor tellus. Nulla facilisi. Nullam blandit leo ut libero dictum molestie. Phasellus suscipit, massa
+    sollicitudin feugiat porta, quam ex dictum tortor, id lobortis felis est vitae erat.
+
+    Sed eu posuere ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    Vestibulum tempus ut nisl vel pretium. Phasellus mattis sapien id sapien pellentesque congue. Nunc id lobortis ante.
+    Ut dapibus eget neque et dictum. Maecenas commodo risus eros, et ultrices magna ornare non.
+
+    Donec in commodo felis. Ut nec est viverra, faucibus magna ac, lobortis est. Cras tincidunt massa nec ultrices
+    tincidunt. Nullam eu magna elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+    curae; Quisque a efficitur lacus. Cras dignissim, elit id tincidunt maximus, justo purus condimentum libero, nec
+    tincidunt orci velit non enim. Maecenas malesuada egestas fermentum. Quisque vel nibh augue. Fusce tempor suscipit
+    dolor ut facilisis. Nulla id tristique nisi. Nam et maximus urna. Cras non cursus nisi. Etiam venenatis lacus vel
+    nisl auctor ultrices.
+
+
+    <!-- ## Reporting with amp-pixel-->
+    <!--
+        Measure results of the experiment using [amp-pixel](/content/amp-dev/documentation/components/reference/amp-pixel-vundefined.md).
+    -->
+    <amp-pixel src="https://example.com/track/?xname=ad-position-experiment&xvar=VARIANT(ad-position-experiment)">
+    </amp-pixel>
+
+    <!-- ## Reporting with amp-analytics-->
+    <!--
+        Measure results of the experiment using [amp-analytics](/content/amp-dev/documentation/components/reference/amp-analytics-v0.1.md). Allocated variants are available as a URL substitution variable: `VARIANT(name-of-the-experiment)`. You can check the analytics requests in the network tab of the developer tools.
+    -->
+    <amp-analytics type="googleanalytics">
+        <script type="application/json">
+            {
+            "vars": {
+                "account": "UA-73836974-1"
+            },
+            "requests": {
+                "experiment": "${pageview}&xid=${experiment}&xvar=${variant}"
+            },
+            "triggers": {
+                "default pageview": {
+                "on": "visible",
+                "request": "experiment",
+                "vars": {
+                    "experiment": "ipkjOIFZQoidBSb9QTbuXw",
+                    "variant": "VARIANT(ad-position-experiment)"
+                }
+                }
+            }
+            }
+        </script>
+    </amp-analytics>
+
+    <!-- ## Development tip -->
+    <!--
+  You can force an experiment to be in a specific variant by adding `amp-x-experiment-name` to the AMP page URL.
+
+  - [#amp-x-ad-position-experiment=0](#amp-x-ad-position-experiment=0)
+  - [#amp-x-ad-position-experiment=1](#amp-x-ad-position-experiment=1)
+
+  Please note you need to manually reload the page after selecting an experiment as `amp-experiment` only evaluates on page load and a hash change doesn't trigger a reload.
+-->
+</body>
+
+</html>
+
