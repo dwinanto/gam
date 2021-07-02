@@ -119,12 +119,17 @@ body {
  // Enable SRA and services.
         googletag.pubads().enableSingleRequest();
         googletag.enableServices();
-          googletag.display()});
+      });
 </script>
 </head>
 <body>
-
-
+    <script>
+        googletag.cmd.push(function() {
+          // Ensure the first call to display comes after static ad slot
+          // divs are defined.
+          googletag.display(interstitialSlot);
+        });
+   </script>
 <div class="header">
   <h1>My Website</h1>
   <p>A website created by me.</p>
