@@ -70,9 +70,9 @@
 <body>
     <script>
          // GPT ad slots
+        console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
         window.googletag = window.googletag || { cmd: [] };     
         googletag.cmd.push(function () {
-
             var interstitialSlot, staticSlot;
             interstitialSlot = false;
             if (google_optimize.get('voPsos_xQxK4ikKv6BUs0A') == '1') {
