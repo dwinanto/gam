@@ -23,16 +23,30 @@
     <title>Web Interstitial Ad Example</title>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'UA-41160335-1');
-    </script>
+        gtag('config', 'UA-41160335-1', {
+            optimize_id: 'GTM-MRH2N5X', // Google Optimize
+        });
 
-    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
+    </script>
+    <style>
+        #link {
+            display: none;
+        }
+
+        div.content {
+            position: fixed;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
     <script>
         // GPT ad slots
         var interstitialSlot, staticSlot;
@@ -87,21 +101,7 @@
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
         });
-    </script>
-
-    <style>
-        #link {
-            display: none;
-        }
-
-        div.content {
-            position: fixed;
-            top: 50%;
-        }
-    </style>
-</head>
-
-<body>
+    </script>    
     <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
     <div class="content">
         <span id="status">Web interstitial is not supported on this page.</span>
