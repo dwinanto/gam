@@ -16,124 +16,98 @@
 -->
 
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Interstitial Ad Example</title>
-
-    <script>
-        function gtag() { dataLayer.push(arguments) }
-
-        console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
-        // GPT ad slots
-        var interstitialSlot, staticSlot;
-
-
-        //callback function, containing actual changes
-        function implementExperimentA(value, name) {
-            if (value == '0') {
-                interstitialSlot = false;
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
-            } else if (value == '1') {
-                interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
-            }
-        }
-
-        // assign your experiment's ID to callback function
-        gtag('event', 'optimize.callback', {
-            name: 'EVNQDfEDQdCc3uALRZAFlQ',
-            callback: implementExperimentA
-        });
-    </script>
-
-    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-41160335-1');
-    </script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
-    
-    <style>
-        #link {
-            display: none;
-        }
-
-        div.content {
-            position: fixed;
-            top: 50%;
-        }
-    </style>
-</head>
-
-<body>
     <script>
-        window.googletag = window.googletag || { cmd: [] };
-        googletag.cmd.push(function () {
-            // Define a web interstitial ad slot.
-            // Slot returns null if the page or device does not support interstitials. /6355419/Travel/Europe/France/Paris
-            if (interstitialSlot) {
-                interstitialSlot.addService(googletag.pubads()).setTargeting('test_request', '1');
+      window.googletag = window.googletag || {cmd: []};
 
-                document.getElementById('status').innerText = 'Interstitial is loading...';
+      // GPT ad slots
+      var interstitialSlot, staticSlot;
 
-                // Add event listener to enable navigation once the interstitial loads.
-                // If this event doesn't fire, try clearing local storage and refreshing
-                // the page.
-                googletag.pubads().addEventListener('slotOnload', function (event) {
-                    if (interstitialSlot === event.slot) {
-                        document.getElementById('link').style.display = 'block';
-                        document.getElementById('status').innerText = 'Interstitial is loaded.';
-                    }
-                });
+      googletag.cmd.push(function() {
+        // Define a web interstitial ad slot.
+        interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video',googletag.enums.OutOfPageFormat.INTERSTITIAL);
+
+        // Slot returns null if the page or device does not support interstitials. /6355419/Travel/Europe/France/Paris
+        if (interstitialSlot) {
+          interstitialSlot.addService(googletag.pubads()).setTargeting('test_request', '1');
+
+          document.getElementById('status').innerText = 'Interstitial is loading...';
+
+          // Add event listener to enable navigation once the interstitial loads.
+          // If this event doesn't fire, try clearing local storage and refreshing
+          // the page.
+          googletag.pubads().addEventListener('slotOnload', function(event) {
+            if (interstitialSlot === event.slot) {
+              document.getElementById('link').style.display = 'block';
+              document.getElementById('status').innerText = 'Interstitial is loaded.';
             }
+          });
+        }
 
-            // Define static ad slots.
-            staticSlot = googletag.defineSlot(
-                '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
-                .addService(googletag.pubads());
+        // Define static ad slots.
+        staticSlot = googletag.defineSlot(
+            '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
+          .addService(googletag.pubads());
 
-            // Enable SRA and services.
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
     </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'UA-41160335-1');
+   </script>
+
+   <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
+    <style>
+      #link {
+        display: none;
+      }
+
+      div.content {
+        position: fixed;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
     <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
     <div class="content">
-        <span id="status">Web interstitial is not supported on this page.</span>
-        <p>
-            <a id="link" href="http://dwinanto.github.io/gam/rewarded3.html">TRIGGER INTERSTITIAL</a>
-            <a id="link" href="https://dwinanto.github.io/gam/web_interstitial.html">web_interstitial</a>
-            <a id="link" href="https://dwinanto.github.io/gam/rewarded3.html">rewarded3</a>
-            <a id="link" href="https://dwinanto.github.io/gam/top_anchor_ads.html">top_anchor_ads.html</a>
-        </p>
-        <p>
-            <!--
+      <span id="status">Web interstitial is not supported on this page.</span>
+      <p>
+        <a id="link" href="http://dwinanto.github.io/gam/rewarded3.html">TRIGGER INTERSTITIAL</a>
+        <a id="link" href="https://dwinanto.github.io/gam/web_interstitial.html">web_interstitial</a>
+         <a id="link" href="https://dwinanto.github.io/gam/rewarded3.html">rewarded3</a>
+         <a id="link" href="https://dwinanto.github.io/gam/top_anchor_ads.html">top_anchor_ads.html</a>
+      </p>
+      <p>
+        <!--
           You can prevent specific links from triggering GPT-managed web interstials by
           adding a data-google-interstitial="false" attribute to the anchor element or
           any ancestor of the anchor element.
         -->
-            <a data-google-interstitial="false" href="http://dwinanto.github.io/gam/rewarded3.html">
-                This link will never trigger an interstitial
-            </a>
-        </p>
+        <a data-google-interstitial="false" href="http://dwinanto.github.io/gam/rewarded3.html">
+          This link will never trigger an interstitial
+        </a>
+      </p>
     </div>
     <script>
-        googletag.cmd.push(function () {
-            // Ensure the first call to display comes after static ad slot
-            // divs are defined.
-            googletag.display(staticSlot);
+        googletag.cmd.push(function() {
+          // Ensure the first call to display comes after static ad slot
+          // divs are defined.
+          googletag.display(staticSlot);
         });
         console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
     </script>
-</body>
-
+  </body>
 </html>
