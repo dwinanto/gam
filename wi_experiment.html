@@ -40,8 +40,12 @@
         function implementExperimentA(value, name) {
             if (value == '0') {
                 interstitialSlot = false;
+                console.log('original');
+                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
             } else if (value == '1') {
                 interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+                console.log('original');
+                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));                
             }
         }
 
@@ -54,8 +58,6 @@
 
     <script>
         window.googletag = window.googletag || { cmd: [] };
-
-
 
         googletag.cmd.push(function () {
             // Define a web interstitial ad slot.
