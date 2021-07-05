@@ -33,27 +33,33 @@
     </script>
     <script>
         // GPT ad slots
-       console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
+        window.googletag = window.googletag || { cmd: [] };
+        console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
         var interstitialSlot, staticSlot;
-
-        //callback function, containing actual changes
-        function implementExperimentA(value, name) {
-            if (value == '0') {
-                interstitialSlot = false;
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
-            } else if (value == '1') {
-                interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
-            }
+        interstitialSlot = false;
+        if(google_optimize.get('voPsos_xQxK4ikKv6BUs0A') == '1'){
+            interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+            console.log('experiment');
+            console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
         }
+        //callback function, containing actual changes
+        // function implementExperimentA(value, name) {
+        //     if (value == '0') {
+        //         interstitialSlot = false;
+        //         console.log('original');
+        //         console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
+        //     } else if (value == '1') {
+        //         interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+        //         console.log('original');
+        //         console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
+        //     }
+        // }
 
         // assign your experiment's ID to callback function
-        gtag('event', 'optimize.callback', {
-            name: 'voPsos_xQxK4ikKv6BUs0A',
-            callback: implementExperimentA
-        });
+        //gtag('event', 'optimize.callback', {
+        //    name: 'voPsos_xQxK4ikKv6BUs0A',
+        //    callback: implementExperimentA
+        //});
     </script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
@@ -72,7 +78,6 @@
 
 <body>
     <script>
-        window.googletag = window.googletag || { cmd: [] };
         googletag.cmd.push(function () {
             // Define a web interstitial ad slot.
             // Slot returns null if the page or device does not support interstitials. /6355419/Travel/Europe/France/Paris
