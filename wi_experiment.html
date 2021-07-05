@@ -21,18 +21,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Interstitial Ad Example</title>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script>
+        function gtag() { dataLayer.push(arguments) }
+
+        console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
+        // GPT ad slots
+        var interstitialSlot, staticSlot;
+
+
+        //callback function, containing actual changes
+        function implementExperimentA(value, name) {
+            if (value == '0') {
+                interstitialSlot = false;
+                console.log('original');
+                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
+            } else if (value == '1') {
+                interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+                console.log('original');
+                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
+            }
+        }
+
+        // assign your experiment's ID to callback function
+        gtag('event', 'optimize.callback', {
+            name: 'EVNQDfEDQdCc3uALRZAFlQ',
+            callback: implementExperimentA
+        });
+    </script>
+
+    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'UA-41160335-1');
     </script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
-    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
+    
     <style>
         #link {
             display: none;
@@ -47,33 +76,7 @@
 
 <body>
     <script>
-        function gtag() {dataLayer.push(arguments)}
-        console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
-        // GPT ad slots
-        var interstitialSlot, staticSlot;
-        //callback function, containing actual changes
-        function implementExperimentA(value, name) {
-            if (value == '0') {
-                interstitialSlot = false;
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
-            } else if (value == '1') {
-                interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
-                console.log('original');
-                console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));                
-            }
-        }
-
-        // assign your experiment's ID to callback function
-        gtag('event', 'optimize.callback', {
-            name: 'EVNQDfEDQdCc3uALRZAFlQ',
-            callback: implementExperimentA
-        });
-    </script>
-
-    <script>
         window.googletag = window.googletag || { cmd: [] };
-
         googletag.cmd.push(function () {
             // Define a web interstitial ad slot.
             // Slot returns null if the page or device does not support interstitials. /6355419/Travel/Europe/France/Paris
@@ -102,7 +105,7 @@
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
         });
-    </script>    
+    </script>
     <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
     <div class="content">
         <span id="status">Web interstitial is not supported on this page.</span>
