@@ -22,12 +22,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Interstitial Ad Experiment Example</title>
 
+     <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
     <script>
-        function gtag() { dataLayer.push(arguments) }
-
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-41160335-1');
+    </script>
+    <script>
         // GPT ad slots
         var interstitialSlot, staticSlot;
-
 
         //callback function, containing actual changes
         function implementExperimentA(value, name) {
@@ -47,16 +53,6 @@
             name: 'voPsos_xQxK4ikKv6BUs0A',
             callback: implementExperimentA
         });
-    </script>
-
-    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41160335-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-41160335-1');
     </script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
