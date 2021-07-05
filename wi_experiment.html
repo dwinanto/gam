@@ -29,11 +29,10 @@
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'UA-41160335-1', {
-            optimize_id: 'GTM-MRH2N5X', // Google Optimize
-        });
-
+        gtag('config', 'UA-41160335-1');
     </script>
+
+    <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MRH2N5X"></script>
     <style>
         #link {
             display: none;
@@ -48,6 +47,7 @@
 
 <body>
     <script>
+        console.log(google_optimize && google_optimize.get('EVNQDfEDQdCc3uALRZAFlQ'));
         // GPT ad slots
         var interstitialSlot, staticSlot;
         //callback function, containing actual changes
