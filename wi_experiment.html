@@ -69,12 +69,12 @@
 
 <body>
     <script>
-         // GPT ad slots
         console.log(google_optimize && google_optimize.get('voPsos_xQxK4ikKv6BUs0A'));
-        window.googletag = window.googletag || { cmd: [] };     
+        window.googletag = window.googletag || { cmd: [] };
+         // GPT ad slots        
+        var interstitialSlot, staticSlot;
+        interstitialSlot = null;
         googletag.cmd.push(function () {
-            var interstitialSlot, staticSlot;
-            interstitialSlot = null;
             if (google_optimize.get('voPsos_xQxK4ikKv6BUs0A') == '1') {
                 // Define a web interstitial ad slot.
                 interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video', googletag.enums.OutOfPageFormat.INTERSTITIAL);
