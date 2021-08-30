@@ -11,6 +11,8 @@
       <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
       <title>Bunny.mov 6</title>
       <dfpvideo:keyvalues key="language" value="EN/ID/KR/JP" type="string"/>
+      <dfpvideo:keyvalues key="lang" value="EN" type="string"/>
+      <dfpvideo:keyvalues key="lang" value="ID" type="string"/>
       <dfpvideo:keyvalues key="dwinanto_mrss_kv" value="EN,ID,KR,JP" type="string"/>
       <dfpvideo:keyvalues key="episode" value="5" type="int"/>
       <dfpvideo:keyvalues key="season" value="2" type="int"/>
