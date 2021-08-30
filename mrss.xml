@@ -24,6 +24,7 @@
      <item> 
       <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
       <title>Bunny.mov 5</title>
+      <dfpvideo:keyvalues key="language" value="EN/ID/KR/JP" type="string"/>
       <dfpvideo:keyvalues key="episode" value="5" type="int"/>
       <dfpvideo:keyvalues key="season" value="2" type="int"/>
       <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
