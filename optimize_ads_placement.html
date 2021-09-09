@@ -45,6 +45,24 @@
         </script>
     </div>
     <div class="container">
+        Debugging resources
+        <div class="container-md">
+            The Optimize JavaScript API also provides you access to the google_optimize global variable which has a
+            ‘get’ method and can be useful in debugging scenarios. For example, you can confirm if an experiment is
+            active on a particular page visit even if:
+        </div>
+        <div class="container-md">
+            Changes are non-visible, e.g. they're applied in currently hidden content. There are issues, e.g. the
+            targeted elements no longer exist on the page There are no changes in some of the variants. The visitor has
+            been assigned to the original variant. To debug an experiment start by getting the experiment ID from the
+            Optimize experiment details page. Then check which variant is assigned to that experiment by entering the
+            following in Chrome DevTools > Console:
+        </div>
+        <div class="container-md">
+            console.log(google_optimize && google_optimize.get('<experiment_id_A>'));
+        </div>
+    </div>
+    <div class="container">
         <!-- Content here -->
         <h1>What is Lorem Ipsum?</h1>
 
