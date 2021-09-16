@@ -29,7 +29,7 @@
 
       googletag.cmd.push(function() {
         // Define a web interstitial ad slot.
-        interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwinanto_test/dwinanto_test_300_250',googletag.enums.OutOfPageFormat.INTERSTITIAL);
+        interstitialSlot = googletag.defineOutOfPageSlot('/1056029/dwi_test_video',googletag.enums.OutOfPageFormat.INTERSTITIAL);
 
         // Slot returns null if the page or device does not support interstitials. /6355419/Travel/Europe/France/Paris
         if (interstitialSlot) {
@@ -50,13 +50,11 @@
 
         // Define static ad slots.
         staticSlot = googletag.defineSlot(
-            '1056029/dwinanto_test/dwinanto_test_300_250', [300, 250], 'static-ad-1')
+            '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
           .addService(googletag.pubads());
 
         // Enable SRA and services.
         googletag.pubads().enableSingleRequest();
-        googletag.pubads().setTargeting('test_request', '1');
-
         googletag.enableServices();
       });
     </script>
@@ -83,7 +81,7 @@
     </style>
   </head>
   <body>
-    <div id="static-ad-1" style="width: 300px; height: 250px;"></div>
+    <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
     <div class="content">
       <span id="status">Web interstitial is not supported on this page.</span>
       <p>
