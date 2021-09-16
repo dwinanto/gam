@@ -112,12 +112,13 @@ body {
       googletag.cmd.push(function() {
         // Define a web interstitial ad slot.
         interstitialSlot = googletag.defineOutOfPageSlot(
-            '/6355419/Travel/Europe/France/Paris',
+            '/1056029/dwinanto_test/dwinanto_test_300_250',
             googletag.enums.OutOfPageFormat.INTERSTITIAL);
               if (interstitialSlot) {
           interstitialSlot.addService(googletag.pubads())};
  // Enable SRA and services.
         googletag.pubads().enableSingleRequest();
+        googletag.pubads().setTargeting('test_request', '1');
         googletag.enableServices();
       });
 </script>
