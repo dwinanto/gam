@@ -143,7 +143,25 @@ body {
   <a href="#">Link</a>
   <a href="#" class="right">Link</a>
 </div>
+    <script>
+        // Selecting the iframe element
+        var ad_iframe = document.getElementById("ad_iframe");
 
+        // Adjusting the iframe height onload event
+        ad_iframe.onload = function ()
+        // function execute while load the iframe
+        {
+            // set the height of the iframe as 
+            // the height of the iframe content
+            ad_iframe.style.height = '50vh';
+
+
+            // set the width of the iframe as the 
+            // width of the iframe content
+            ad_iframe.style.width = '50vw';
+
+        }
+    </script>
 
 </body>
 </html>
