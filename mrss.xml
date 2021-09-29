@@ -17,7 +17,7 @@
       <dfpvideo:keyvalues key="episode" value="5" type="int"/>
       <dfpvideo:keyvalues key="season" value="2" type="int"/>
       <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <dfpvideo:keyvalues key="aamrssversion" value="TITL1512210001636741v20Dwi" type="string"/>
+      <dfpvideo:keyvalues key="aamrssversion" value="TITL1512210001636741v21Dwi" type="string"/>
       <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
       <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
       <dfpvideo:contentId>TITL1512210001636741</dfpvideo:contentId>
