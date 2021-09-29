@@ -7,6 +7,30 @@
   <channel>	
     <title>Sample video</title>	
     <dfpvideo:version>2</dfpvideo:version>
+
+    <item>
+<pubDate>Fri, 10 Sep 2021 15:10:23 GMT</pubDate>
+<title>Siti Muslihat</title>
+<dfpvideo:contentId>TITL1512210001636741</dfpvideo:contentId>
+<dfpvideo:keyvalues key="aatype" value="Movie" type="string"/>
+<dfpvideo:keyvalues key="aasubtitle" value="English" type="string"/>
+<dfpvideo:keyvalues key="aagenre" value="Movies" type="string"/>
+<dfpvideo:keyvalues key="aasubgenre" value="Drama" type="string"/>
+<dfpvideo:keyvalues key="aalang" value="Malay" type="string"/>
+<dfpvideo:keyvalues key="aapro" value="MBNS" type="string"/>
+<dfpvideo:keyvalues key="aapct" value="Family" type="string"/>
+<dfpvideo:keyvalues key="aachannel" value="Astro Prima HD" type="string"/>
+<dfpvideo:keyvalues key="aastart" value="Wed, 13 May 2020 13:00:00 GMT" type="string"/>
+<dfpvideo:keyvalues key="aaend" value="Tue, 12 Nov 2024 15:59:59 GMT" type="string"/>
+<dfpvideo:keyvalues key="aamrssversion" value="TITL1512210001636741v19" type="string"/>
+<dfpvideo:lastModifiedDate>Wed, 29 Sep 2021 16:46:03 +0800</dfpvideo:lastModifiedDate>
+
+<media:content duration="7602" url=""/>
+<media:status state="Active"/>
+<media:thumbnail url="http://vod-poster.astro.com.my/prod/IVP(STB_OTT_STV)_JANBQ_IVP_LAND_288x162_2021928_221757.jpg" width="288" height="162"/>
+<media:thumbnail url="https://s3-ap-southeast-1.amazonaws.com/ams-astro/production/images/JANBQ_p.jpg" width="1080" height="1620"/>
+<media:thumbnail url="https://s3-ap-southeast-1.amazonaws.com/ams-astro/production/images/JANBQ.jpg" width="1920" height="1080"/>
+</item>
      <item> 
       <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
       <title>Bunny.mov 6</title>
@@ -21,68 +45,6 @@
       <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
       <dfpvideo:contentId>video6</dfpvideo:contentId>
       <dfpvideo:lastModifiedDate>Tue, 31 Aug 2021 4:25:11  +0200</dfpvideo:lastModifiedDate>
-      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
-    </item>     
-     <item> 
-      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
-      <title>Bunny.mov 5</title>
-      <dfpvideo:keyvalues key="language" value="EN/ID/KR/JP" type="string"/>
-      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
-      <dfpvideo:keyvalues key="season" value="2" type="int"/>
-      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
-      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
-      <dfpvideo:contentId>video5</dfpvideo:contentId>
-      <dfpvideo:lastModifiedDate>Tue, 31 Aug 2021 4:24:11  +0200</dfpvideo:lastModifiedDate>
-      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
-    </item> 
-    
-    <item> 
-      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
-      <title>Bunny.mov 4</title>
-      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
-      <dfpvideo:keyvalues key="season" value="2" type="int"/>
-      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
-      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
-      <dfpvideo:contentId>video4</dfpvideo:contentId>
-      <dfpvideo:lastModifiedDate>Fri, 17 Apr 2021 18:20:11  +0000</dfpvideo:lastModifiedDate>
-      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
-    </item>     
-    <item> 
-      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
-      <title>Bunny.mov 3</title>
-      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
-      <dfpvideo:keyvalues key="season" value="2" type="int"/>
-      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
-      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
-      <dfpvideo:contentId>video3</dfpvideo:contentId>
-      <dfpvideo:lastModifiedDate>Fri, 17 Apr 2021 18:20:11  +0000</dfpvideo:lastModifiedDate>
-      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
-    </item>       
-    <item> 
-      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
-      <title>Bunny.mov 2</title>
-      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
-      <dfpvideo:keyvalues key="season" value="2" type="int"/>
-      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
-      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
-      <dfpvideo:contentId>video2</dfpvideo:contentId>
-      <dfpvideo:lastModifiedDate>Fri, 12 Nov 2016 18:19:11  +0000</dfpvideo:lastModifiedDate>
-      <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
-    </item>    
-    <item> 
-      <pubDate>Fri, 12 Nov 2016 18:19:10 +0000</pubDate>
-      <title>Bunny.mov</title>
-      <dfpvideo:keyvalues key="episode" value="5" type="int"/>
-      <dfpvideo:keyvalues key="season" value="2" type="int"/>
-      <dfpvideo:keyvalues key="title" value="Example Title" type="string"/>
-      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/a/a7/Big_Buck_Bunny_thumbnail_vlc.png" width='280' height='190'/>
-      <media:content duration="39" url="http://www.feedprovider.com/video?8eqe7e"/>
-      <dfpvideo:contentId>video1</dfpvideo:contentId>
-      <dfpvideo:lastModifiedDate>Fri, 12 Nov 2016 18:19:10  +0000</dfpvideo:lastModifiedDate>
       <dfpvideo:cuepoints>10</dfpvideo:cuepoints>
     </item>
   </channel>
