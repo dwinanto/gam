@@ -22,8 +22,8 @@
 <dfpvideo:keyvalues key="aachannel" value="Astro Prima HD" type="string"/>
 <dfpvideo:keyvalues key="aastart" value="Wed, 13 May 2020 13:00:00 GMT" type="string"/>
 <dfpvideo:keyvalues key="aaend" value="Tue, 12 Nov 2024 15:59:59 GMT" type="string"/>
-<dfpvideo:keyvalues key="aamrssversion" value="TITL1512210001636741v19" type="string"/>
-<dfpvideo:lastModifiedDate>Wed, 29 Sep 2021 16:46:03 +0800</dfpvideo:lastModifiedDate>
+<dfpvideo:keyvalues key="aamrssversion" value="TITL1512210001636741v20Manual" type="string"/>
+<dfpvideo:lastModifiedDate>Wed, 29 Sep 2021 16:47:03 +0800</dfpvideo:lastModifiedDate>
 
 <media:content duration="7602" url=""/>
 <media:status state="Active"/>
