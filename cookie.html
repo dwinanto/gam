@@ -28,13 +28,13 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   let auto_user = getCookie("auto_username");
-  if (user != "") {
+  if (user != "" || auto_user != "") {
     alert("Welcome again " + user + " auto id:" + auto_user);
   } else {
+     setCookie("auto_username",  Math.floor((Math.random() * 100) + 1), 30);
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
        setCookie("username", user, 30);
-       setCookie("auto_username",  Math.floor((Math.random() * 100) + 1), 30);
      }
   }
 }
