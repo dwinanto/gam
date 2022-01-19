@@ -105,7 +105,7 @@
         });
 
         const remoteConfig = firebase.remoteConfig();
-        remoteConfig.settings.minimumFetchIntervalMillis = 36;
+        remoteConfig.settings.minimumFetchIntervalMillis = 1;
         remoteConfig.defaultConfig = {
             "welcome_message": "Welcome"
         };
@@ -123,14 +123,6 @@
             .catch((err) => {
                 console.error('Firebase Remote Config failed to initialize', err);
             });
-
-
-        const val = remoteConfig.getValue("welcome_messsage");
-        console.log(val);
-
-
-
-
 
         function insertAfter(referenceNode, newNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
