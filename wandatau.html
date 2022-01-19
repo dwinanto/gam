@@ -105,22 +105,17 @@
         });
 
         const remoteConfig = firebase.remoteConfig();
-        remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
-
-        remoteConfig.ensureInitialized()
-            .then(() => {
-                console.log('Firebase Remote Config is initialized');
-            })
-            .catch((err) => {
-                console.error('Firebase Remote Config failed to initialize', err);
-            });
+        remoteConfig.settings = {
+            fetchTimeMillis: 60000,
+            minimumFetchIntervalMillis: 300000
+        }
 
         remoteConfig.fetchAndActivate()
             .then(() => {
                 const val = remoteConfig.getValue('welcome_message');
+                console.log(val);
                 const welcome_element = document.getElementById('welcome_message');
                 welcome_element.innerText = val._value + ' (' + val._source + ')';
-                console.log(val);
             })
             .catch((err) => {
                 console.error('Firebase Remote Config failed to fetch and activate', err);
