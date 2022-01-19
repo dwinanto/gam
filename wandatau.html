@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Infinite content example remote config</title>
+    <title>Infinite content example WandaT</title>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -75,6 +75,7 @@
 
     <!-- Button to load more content dynamically. -->
     <button onclick="moreContent()">More Content</button>
+    <div id="welcome_message">welcome_message</div>
     <div id="foo">Hello</div>
     <div id="foo1">HelloW1</div>
     <div id="foo2">HelloW2</div>
@@ -111,8 +112,24 @@
         console.log(remoteConfig);
         console.log(remoteConfig.defaultConfig);
 
+        remoteConfig.ensureInitialized()
+            .then(() => {
+                console.log('Firebase Remote Config is initialized');
+                const val = remoteConfig.getValue('welcome_message');
+                const welcome_element = document.getElementById('welcome_message');
+                welcome_element.innerText = val._value + ' (' + val._source + ')';
+            })
+            .catch((err) => {
+                console.error('Firebase Remote Config failed to initialize', err);
+            });
+
+
         const val = remoteConfig.getValue("welcome_messsage");
         console.log(val);
+
+
+
+
 
         function insertAfter(referenceNode, newNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
