@@ -112,7 +112,7 @@
 
         remoteConfig.fetchAndActivate()
             .then(() => {
-                const val = remoteConfig.getValue('welcome_message');
+                const val = remoteConfig.getValue('welcome_messsage');
                 console.log(val);
                 const welcome_element = document.getElementById('welcome_message');
                 welcome_element.innerText = val._value + ' (' + val._source + ')';
