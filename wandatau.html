@@ -105,12 +105,7 @@
         });
 
         const remoteConfig = firebase.remoteConfig();
-        remoteConfig.settings.minimumFetchIntervalMillis = 1;
-        remoteConfig.defaultConfig = {
-            "welcome_message": "Welcome"
-        };
-        console.log(remoteConfig);
-        console.log(remoteConfig.defaultConfig);
+        remoteConfig.settings.minimumFetchIntervalMillis = 15000;
 
         remoteConfig.ensureInitialized()
             .then(() => {
