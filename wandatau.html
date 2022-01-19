@@ -61,7 +61,7 @@
 </head>
 
 <body>
-    <h1>GPT Test Page - Infinite Content WandaT 1 Sec</h1>
+    <h1>GPT Test Page - Infinite Content WandaT</h1>
 
     <!-- First ad -->
     <div id="leaderboard">
@@ -105,19 +105,27 @@
         });
 
         const remoteConfig = firebase.remoteConfig();
-        remoteConfig.settings.minimumFetchIntervalMillis = 1;
+        remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
 
         remoteConfig.ensureInitialized()
             .then(() => {
                 console.log('Firebase Remote Config is initialized');
+            })
+            .catch((err) => {
+                console.error('Firebase Remote Config failed to initialize', err);
+            });
+
+        remoteConfig.fetchAndActivate()
+            .then(() => {
                 const val = remoteConfig.getValue('welcome_message');
                 const welcome_element = document.getElementById('welcome_message');
                 welcome_element.innerText = val._value + ' (' + val._source + ')';
                 console.log(val);
             })
             .catch((err) => {
-                console.error('Firebase Remote Config failed to initialize', err);
+                console.error('Firebase Remote Config failed to fetch and activate', err);
             });
+
 
         function insertAfter(referenceNode, newNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
