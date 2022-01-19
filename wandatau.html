@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Infinite content example WandaT</title>
+    <title>Infinite content example</title>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
@@ -61,7 +61,7 @@
 </head>
 
 <body>
-    <h1>GPT Test Page - Infinite Content</h1>
+    <h1>GPT Test Page - Infinite Content WandaT</h1>
 
     <!-- First ad -->
     <div id="leaderboard">
@@ -118,6 +118,7 @@
                 const val = remoteConfig.getValue('welcome_message');
                 const welcome_element = document.getElementById('welcome_message');
                 welcome_element.innerText = val._value + ' (' + val._source + ')';
+                console.log(val);
             })
             .catch((err) => {
                 console.error('Firebase Remote Config failed to initialize', err);
