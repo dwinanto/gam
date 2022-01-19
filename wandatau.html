@@ -111,6 +111,9 @@
         console.log(remoteConfig);
         console.log(remoteConfig.defaultConfig);
 
+        const val = remoteConfig.getValue("welcome_messsage");
+        console.log(val);
+
         function insertAfter(referenceNode, newNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
         }
