@@ -125,7 +125,7 @@
         const remoteConfig = firebase.remoteConfig();
         remoteConfig.settings = {
             fetchTimeMillis: 60000,
-            minimumFetchIntervalMillis: 1
+            minimumFetchIntervalMillis: 30000
         }
 
         remoteConfig.fetchAndActivate()
