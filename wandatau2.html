@@ -120,8 +120,8 @@
         const val = remoteConfig.getValue('welcome_messsage');
         const ads_location = remoteConfig.getValue('ads_location1');
 
-        targetlist = ["#div1", "li[sort='2']", "p.baca"];
-        //targetlist = ads_location1._value.split(" ");
+        //targetlist = ["#div1", "li[sort='2']", "p.baca"];
+        targetlist = ads_location._value.split(" ");
         for (let i = 0; i < targetlist.length; i++) {
           console.log(targetlist[i]);
           temp_nodes = document.querySelectorAll(targetlist[i]);
