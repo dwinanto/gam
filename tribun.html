@@ -114,13 +114,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>var googletag=googletag||{};function sendAdserverRequest(){pbjs.adserverRequestSent||((pbjs.adserverRequestSent=!0),googletag.cmd.push(function(){pbjs.que.push(function(){pbjs.setTargetingForGPTAsync(),googletag.pubads().refresh();});}));} (googletag.cmd=googletag.cmd||[]),googletag.cmd.push(function(){googletag.pubads().disableInitialLoad();}),pbjs.que.push(function(){pbjs.aliasBidder("criteo","criteorn");pbjs.setConfig({enableSendAllBids:true,priceGranularity:"high"});pbjs.addAdUnits(adUnits),pbjs.requestBids({bidsBackHandler:sendAdserverRequest,timeout:PREBID_TIMEOUT});}),setTimeout(function(){sendAdserverRequest();},FAILSAFE_TIMEOUT);</script>
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
-<script>
-window.googletag = window.googletag || { cmd: [] };
-googletag.cmd.push(function () {
-	googletag.pubads().enableSingleRequest();
-	googletag.enableServices();      
+  <script>
+    window.googletag = window.googletag || { cmd: [] };
+
+    googletag.cmd.push(function () {
+      // Declare slots initially present on the page
+      googletag.defineSlot('/6355419/Travel', [728, 90], 'leaderboard')
+        .setTargeting("test", "infinitescroll")
+        .addService(googletag.pubads());
+
+      // Enable SRA to honor competetive exclusions and roadblocks.
+      googletag.pubads().enableSingleRequest();
+
+      // Enable services
+      googletag.enableServices();
     });
-</script>
+
+
+  </script>
 
 
 
@@ -325,6 +336,14 @@ try{
 <!-- end glightbox -->
 </head>
 <body>
+  <div id="leaderboard" height="90">
+    <script>
+      // Call display() to register the slot as ready and fetch an ad.
+      googletag.cmd.push(function () {
+        googletag.display('leaderboard');
+      });
+    </script>
+  </div>	
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNJ5M3B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
