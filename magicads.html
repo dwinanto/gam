@@ -11,6 +11,25 @@
   <link rel="preload" href="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js" as="script">
   <link rel="preload" href="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js" as="script">
   <link rel="preload" href="https://www.gstatic.com/firebasejs/8.6.1/firebase-remote-config.js" as="script">
+
+    <script>
+    window.googletag = window.googletag || { cmd: [] };
+
+    googletag.cmd.push(function () {
+      // Declare slots initially present on the page
+      googletag.defineSlot('/6355419/Travel', [728, 90], 'leaderboard')
+        .setTargeting("test", "infinitescroll")
+        .addService(googletag.pubads());
+
+      // Enable SRA to honor competetive exclusions and roadblocks.
+      googletag.pubads().enableSingleRequest();
+
+      // Enable services
+      googletag.enableServices();
+    });
+
+
+  </script>
   
 <style>
 div.a {
