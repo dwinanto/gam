@@ -4937,8 +4937,7 @@ function endless(slotName) {
 
         const remoteConfig = firebase.remoteConfig();
         remoteConfig.settings = {
-            fetchTimeMillis: 60000,
-            minimumFetchIntervalMillis: 30000
+            minimumFetchIntervalMillis: 10
         }
         remoteConfig.defaultConfig = {
             "ads_location1": "#lotto_results_holder"
