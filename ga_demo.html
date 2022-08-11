@@ -48,13 +48,17 @@
 	  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-04860VVB4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-04860VVB4E');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-04860VVB4E',{'custom_map': {'gender': 'gender_value'}});
+    gtag('event', 'gender_dimension', {'gender': 'female'});
+    gtag('event', 'exception', {
+  'description': 'Division by zero',
+  'fatal': false
+});
+  </script>
 
   
   </head>
